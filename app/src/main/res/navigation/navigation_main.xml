@@ -8,17 +8,30 @@
     <fragment
         android:id="@+id/createTodoFragment"
         android:name="com.yeet.todoapp.view.CreateTodoFragment"
-        android:label="fragment_create_todo"
+        android:label="Create Todo"
         tools:layout="@layout/fragment_create_todo" />
     <fragment
         android:id="@+id/todoListFragment"
         android:name="com.yeet.todoapp.view.TodoListFragment"
-        android:label="fragment_todo_list"
-        tools:layout="@layout/fragment_todo_list" >
+        android:label="Todo List"
+        tools:layout="@layout/fragment_todo_list">
         <action
             android:id="@+id/actionCreateTodo"
             app:destination="@id/createTodoFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_todoListFragment_to_editTodoFragment"
+            app:destination="@id/editTodoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTodoFragment"
+        android:name="com.yeet.todoapp.view.EditTodoFragment"
+        android:label="Edit Todo">
+        <argument
+            android:name="uuid"
+            app:argType="integer" />
     </fragment>
 </navigation>
