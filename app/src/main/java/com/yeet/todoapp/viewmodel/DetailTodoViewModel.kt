@@ -35,7 +35,7 @@ class DetailTodoViewModel(application: Application)
     fun update(title:String, notes:String, priority:Int, uuid:Int) {
         launch {
             val db = buildDb(getApplication())
-            db.todoDao().update(title, notes, priority, uuid)
+            db.todoDao().update(title, notes, priority, 0, uuid)
         }
     }
 
